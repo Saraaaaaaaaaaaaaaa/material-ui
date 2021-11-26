@@ -8,7 +8,7 @@ import TypographyComponent from 'components/Typography/TypographyComponent'
 const MultipleSlider = ({ config }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: 30 }}>
-      <Box sx={{ width: '70%' }}>
+      <Box sx={{ width: '100%' }}>
         {
           config.map(c => (
             <div key={c.key}>

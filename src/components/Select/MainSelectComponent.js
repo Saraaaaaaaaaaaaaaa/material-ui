@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import PropTypes from 'prop-types'
 import colors from 'utils/global'
+import { makeStyles } from '@mui/styles'
 
 import InputLabelComponent from 'components/InputLabel/InputLabelComponent'
 import SelectComponent from 'components/Select/SelectComponent'
@@ -10,7 +11,14 @@ import ChipComponent from 'components/Chip/ChipComponent'
 
 import './MainSelectComponent.css'
 
+const useStyles = makeStyles({
+  root: {
+
+  }
+})
+
 const MainSelectComponent = ({ config }) => {
+  const classes = useStyles()
   const [selected, setSelected] = useState('')
   const [arrayOfSelected, setArrayOfSelected] = useState([])
 
@@ -33,7 +41,7 @@ const MainSelectComponent = ({ config }) => {
         <Box sx={{ width: 250 }}>
           <FormControl fullWidth>
             <InputLabelComponent text={'Name'}/>
-            <SelectComponent value={selected} label={'Name'} onChange={handleChange} config={config}/>
+            <SelectComponent style={classes.root} value={selected} label={'Name'} onChange={handleChange} config={config} />
           </FormControl>
         </Box>
       </div>
