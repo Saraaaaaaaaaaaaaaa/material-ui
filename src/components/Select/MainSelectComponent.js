@@ -32,7 +32,12 @@ const MainSelectComponent = ({ config }) => {
 
   const handleDelete = (value) => {
     const arrayWithDeletedItem = arrayOfSelected.filter(item => item !== value)
-    setArrayOfSelected(arrayWithDeletedItem)
+    if (arrayWithDeletedItem.length === 0) {
+      setArrayOfSelected(arrayWithDeletedItem)
+      setSelected('')
+    } else {
+      setArrayOfSelected(arrayWithDeletedItem)
+    }
   }
 
   return (
