@@ -23,7 +23,7 @@ const SliderComponent = ({ config }) => {
         min={config.min}
         max={config.max}
         valueLabelDisplay="auto"
-        style={{ color: colors.pink, height: 3 }}
+        style={{ color: colors.pink, height: 3, marginLeft: 40 }}
       />
     </Box>
   )

@@ -7,12 +7,12 @@ import TypographyComponent from 'components/Typography/TypographyComponent'
 
 const MultipleSlider = ({ config }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: 30, marginBottom: 50, marginLeft: 40 }}>
+    <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: 30 }}>
       <Box sx={{ width: '70%' }}>
         {
           config.map(c => (
             <div key={c.key}>
-              <TypographyComponent text={c.title} style={{ fontWeight: 'bold', marginLeft: -10, marginBottom: 20 }}/>
+              <TypographyComponent text={c.title} style={{ fontWeight: 'bold', marginLeft: 35, marginBottom: 20 }}/>
               <SliderComponent config={c}/>
             </div>
           ))

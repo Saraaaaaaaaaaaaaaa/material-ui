@@ -186,10 +186,10 @@ const Questions = () => {
           return (
             <div key={question.id}>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div style={{ fontSize: 18, fontWeight: 'bold' }}>{question.questionNumber}</div>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', marginBottom: 50 }} >
-                  <div style={{ fontSize: 18, fontWeight: 'bold' }}>{question.question}</div>
-                  <div style={{ fontSize: 14 }}>{question.subtitle}</div>
+                <div style={{ fontSize: 18, fontWeight: 'bold', marginTop: 50 }}>{question.questionNumber}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', marginBottom: 50, marginTop: 50 }} >
+                  <div style={{ fontSize: 18, fontWeight: 'bold', paddingLeft: 8 }}>{question.question}</div>
+                  <div style={{ fontSize: 14, paddingLeft: 8 }}>{question.subtitle}</div>
                 </div>
               </div>
               <div>{<Component config={question.config}/>}</div>
