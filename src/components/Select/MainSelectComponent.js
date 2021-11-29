@@ -12,8 +12,9 @@ import ChipComponent from 'components/Chip/ChipComponent'
 import './MainSelectComponent.css'
 
 const useStyles = makeStyles({
-  root: {
-
+  line: {
+    color: colors.font,
+    marginBottom: 20
   }
 })
 
@@ -51,7 +52,7 @@ const MainSelectComponent = ({ config }) => {
         </Box>
       </div>
       <div>
-        <hr style={{ color: colors.font, marginBottom: 20 }} />
+        <hr className={classes.line} />
       </div>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, marginBottom: 5 }}>
         {arrayOfSelected.map((value) => (

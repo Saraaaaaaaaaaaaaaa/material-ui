@@ -10,6 +10,8 @@ import MultipleSlider from 'components/Slider/MultipleSlider'
 import MainTextFieldComponent from 'components/TextField/MainTextFieldComponent'
 import ButtonComponent from 'components/Button/ButtonComponent'
 
+import './Questions.css'
+
 const questions = [
   {
     id: 1,
@@ -178,18 +180,18 @@ const questions = [
 
 const Questions = () => {
   return (
-    <div style={{ width: '50%', margin: '0 auto' }}>
+    <div className="mainQuestionContainer">
       {
         questions?.map(question => {
           const Component = question.component
 
           return (
             <div key={question.id}>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div style={{ fontSize: 18, fontWeight: 'bold', marginTop: 50 }}>{question.questionNumber}</div>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', marginBottom: 50, marginTop: 50 }} >
-                  <div style={{ fontSize: 18, fontWeight: 'bold', paddingLeft: 8 }}>{question.question}</div>
-                  <div style={{ fontSize: 14, paddingLeft: 8 }}>{question.subtitle}</div>
+              <div className="titleContainer">
+                <div className="questionNumber">{question.questionNumber}</div>
+                <div className="questionContainer" >
+                  <div className="title">{question.question}</div>
+                  <div className="subtitle">{question.subtitle}</div>
                 </div>
               </div>
               <div>{<Component config={question.config}/>}</div>
@@ -197,7 +199,7 @@ const Questions = () => {
           )
         })
       }
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 50, marginBottom: 50 }}>
+      <div className="buttonContainer">
         <ButtonComponent text={'Potvrdi'} variant={'contained'} style={{ background: colors.pink, color: colors.white }}/>
       </div>
     </div>

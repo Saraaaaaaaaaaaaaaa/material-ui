@@ -8,6 +8,9 @@ import './MainTextFieldComponent.css'
 
 const useStyles = makeStyles({
   root: {
+    // '& .MuiFilledInput-root': {
+    //   background: colors.white
+    // },
     '& label.Mui-focused': {
       color: colors.pink
     },

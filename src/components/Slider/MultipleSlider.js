@@ -5,9 +5,11 @@ import PropTypes from 'prop-types'
 import SliderComponent from 'components/Slider/SliderComponent'
 import TypographyComponent from 'components/Typography/TypographyComponent'
 
+import './MultipleSlider.css'
+
 const MultipleSlider = ({ config }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: 30 }}>
+    <div className="multipleSliderContainer">
       <Box sx={{ width: '100%' }}>
         {
           config.map(c => (
