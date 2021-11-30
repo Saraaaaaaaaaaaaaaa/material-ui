@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import colors from 'utils/global'
 
-import ChipComponent from 'components/Chip/ChipComponent'
+import ChipComponent from 'components/ui/Chip/ChipComponent'
 
 import './MainChipComponent.css'
 

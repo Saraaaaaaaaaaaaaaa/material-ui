@@ -2,13 +2,13 @@ import React from 'react'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
 import PropTypes from 'prop-types'
 
-const TextAreaComponent = ({ minRows, value, onChange, style }) => {
+const TextAreaComponent = ({ minRows, style, ...props }) => {
+  console.log(props, 'props')
   return (
     <TextareaAutosize
       minRows={minRows}
-      value={value}
-      onChange={onChange}
       style={style}
+      {...props}
     />
   )
 }

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 import colors from 'utils/global'
 import { makeStyles } from '@mui/styles'
 
-import InputLabelComponent from 'components/InputLabel/InputLabelComponent'
-import SelectComponent from 'components/Select/SelectComponent'
-import ChipComponent from 'components/Chip/ChipComponent'
+import InputLabelComponent from 'components/ui/InputLabel/InputLabelComponent'
+import SelectComponent from 'components/ui/Select/SelectComponent'
+import ChipComponent from 'components/ui/Chip/ChipComponent'
 
 import './MainSelectComponent.css'
 
