@@ -104,7 +104,7 @@ const questions = [
       {
         key: 1,
         title: 'Office - common rooms',
-        defaultValue: 1,
+        defaultValue: null,
         step: 1,
         marks: [
           { value: 1, label: '1' },
@@ -123,7 +123,7 @@ const questions = [
       {
         key: 2,
         title: 'Office - at the desk',
-        defaultValue: 1,
+        defaultValue: null,
         step: 1,
         marks: [
           { value: 1, label: '1' },
@@ -144,7 +144,7 @@ const questions = [
       {
         key: 3,
         title: 'Work Commute (minutes)',
-        defaultValue: 10,
+        defaultValue: null,
         step: 5,
         marks: [
           { value: 10, label: '10' },
