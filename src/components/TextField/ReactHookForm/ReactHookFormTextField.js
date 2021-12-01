@@ -1,8 +1,8 @@
 import React from 'react'
 import { useFormContext, Controller } from 'react-hook-form'
+import PropTypes from 'prop-types'
 import colors from 'utils/global'
 import { makeStyles } from '@mui/styles'
-import PropTypes from 'prop-types'
 
 import TextFieldComponent from 'components/ui/TextField/TextFieldComponent'
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 const ReactHookFormTextField = ({ config }) => {
   const classes = useStyles()
   const { formState: { errors }, control } = useFormContext()
-  console.log(errors[name], 'errors[name]')
+
   return (
     <div className="textFieldContainer">
       {
@@ -43,7 +43,7 @@ const ReactHookFormTextField = ({ config }) => {
               <TextFieldComponent className={classes.root} label={c.label} variant='outlined' style={{ marginBottom: 15 }} {...field} />
             )}
           />
-          {errors[c.name] && <p style={{ marginTop: -10, fontSize: 13, color: colors.error }}>{errors[c.name].message}</p>}
+          {errors[c.name] && <p className="textFieldErrorText" style={{ color: colors.error }}>{errors[c.name].message}</p>}
         </>
         )
       }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useFormContext, Controller } from 'react-hook-form'
-import Box from '@mui/material/Box'
 import PropTypes from 'prop-types'
+import Box from '@mui/material/Box'
 import colors from 'utils/global'
 
 import SliderComponent from 'components/ui/Slider/SliderComponent'

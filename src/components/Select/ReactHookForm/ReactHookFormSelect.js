@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useFormContext, Controller } from 'react-hook-form'
+import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
-import PropTypes from 'prop-types'
 import colors from 'utils/global'
 import { makeStyles } from '@mui/styles'
 

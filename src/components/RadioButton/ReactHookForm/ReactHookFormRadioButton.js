@@ -1,7 +1,7 @@
 import React from 'react'
-import RadioGroup from '@mui/material/RadioGroup'
-import PropTypes from 'prop-types'
 import { useFormContext, Controller } from 'react-hook-form'
+import PropTypes from 'prop-types'
+import RadioGroup from '@mui/material/RadioGroup'
 
 import FormControlLabels from 'components/FormControlLabel/FormControlLabels'
 
