@@ -29,7 +29,6 @@ const ReactHookFormSelect = ({ config, name, message }) => {
     if (!selected) {
       return
     }
-    resetField(name)
     if (arrayOfSelected.includes(selected)) {
       return
     }
@@ -42,6 +41,9 @@ const ReactHookFormSelect = ({ config, name, message }) => {
   const handleDelete = (value) => {
     const arrayWithDeletedItem = arrayOfSelected.filter(item => item !== value)
     setArrayOfSelected(arrayWithDeletedItem)
+    if (arrayWithDeletedItem.length === 0) {
+      resetField(name)
+    }
   }
 
   return (

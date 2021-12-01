@@ -15,7 +15,7 @@ const TextFieldComponent = ({ className, label, variant, style, ...props }) => {
 }
 
 TextFieldComponent.propTypes = {
-  className: PropTypes.object,
+  className: PropTypes.string,
   label: PropTypes.string,
   variant: PropTypes.string,
   style: PropTypes.object

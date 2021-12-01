@@ -10,6 +10,7 @@ import TextAreaQuestion from 'components/TextArea/TextAreaQuestion'
 import MultipleSliderQuestion from 'components/Slider/MultipleSlider/MultipleSliderQuestion'
 import TextFieldQuestion from 'components/TextField/TextFieldQuestion'
 import ButtonComponent from 'components/ui/Button/ButtonComponent'
+import Text from 'components/ui/Text/Text'
 
 import './Questions.css'
 
@@ -184,16 +185,19 @@ const questions = [
     component: TextFieldQuestion,
     config: [
       {
+        key: 1,
         label: 'First Name',
         name: 'firstName',
         message: { maxLength: { value: 15, message: 'Maksimalan broj karaktera je 15' }, required: 'Ovo polje je obavezno', pattern: { value: characters, message: 'Dozvoljeno je uneti samo slova' } }
       },
       {
+        key: 2,
         label: 'Last Name',
         name: 'lastName',
         message: { maxLength: { value: 20, message: 'Maksimalan broj karaktera je 20' }, required: 'Ovo polje je obavezno', pattern: { value: characters, message: 'Dozvoljeno je uneti samo slova' } }
       },
       {
+        key: 3,
         label: 'Email',
         name: 'email',
         message: { required: 'Ovo polje je obavezno', pattern: { value: email, message: 'Neispravna email adresa' } }
@@ -220,8 +224,8 @@ const Questions = () => {
                   <div className="titleContainer">
                     <div className="questionNumber">{question.questionNumber}</div>
                     <div className="questionContainer" >
-                      <div className="title">{question.question}</div>
-                      <div className="subtitle">{question.subtitle}</div>
+                      <Text style={{ fontSize: 18, fontWeight: 'bold', paddingLeft: 8 }} text={question.question}/>
+                      <Text style={{ fontSize: 14, paddingLeft: 8 }} text={question.subtitle}/>
                     </div>
                   </div>
                   <div>{<Component config={question.config} />}</div>

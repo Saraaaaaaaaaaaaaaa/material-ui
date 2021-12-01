@@ -36,19 +36,19 @@ const ReactHookFormChip = ({ config, name, message }) => {
         chipArray?.map(chip => {
           return <>
            <Controller
-            key={chip.key}
-            name={name}
-            control={control}
-            rules={message}
-            render={({ field }) => (
-              <ChipComponent
-                label={chip.label}
-                variant={'outlined'}
-                onClick={() => handleClick(chip.key)}
-                style={{ background: chip.selected ? colors.pink : null, borderColor: colors.pink, color: chip.selected ? colors.white : colors.pink, marginBottom: 10, marginRight: 10 }}
-                {...field}
-              />
-            )}
+              key={chip.key}
+              name={name}
+              control={control}
+              rules={message}
+              render={({ field }) => (
+                <ChipComponent
+                  label={chip.label}
+                  variant={'outlined'}
+                  onClick={() => handleClick(chip.key)}
+                  style={{ background: chip.selected ? colors.pink : null, borderColor: colors.pink, color: chip.selected ? colors.white : colors.pink, marginBottom: 10, marginRight: 10 }}
+                  {...field}
+                />
+              )}
             />
           </>
         })
