@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import RadioButtonComponent from 'components/RadioButton/RadioButtonComponent'
+import ReactHookFormRadioButton from 'components/RadioButton/ReactHookForm/ReactHookFormRadioButton'
 
 const RadioButtonQuestion = ({ config }) => {
   return (
-    <RadioButtonComponent name='choose' message={{ required: 'Ovo polje je obavezno' }} config={config}/>
+    <ReactHookFormRadioButton name='choose' message={{ required: 'Ovo polje je obavezno' }} config={config}/>
   )
 }
 

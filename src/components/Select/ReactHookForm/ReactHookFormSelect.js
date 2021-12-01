@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useFormContext, Controller } from 'react-hook-form'
 import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import PropTypes from 'prop-types'
@@ -9,7 +10,7 @@ import InputLabelComponent from 'components/ui/InputLabel/InputLabelComponent'
 import SelectComponent from 'components/ui/Select/SelectComponent'
 import ChipComponent from 'components/ui/Chip/ChipComponent'
 
-import './MainSelectComponent.css'
+import './ReactHookFormSelect.css'
 
 const useStyles = makeStyles({
   line: {
@@ -18,27 +19,29 @@ const useStyles = makeStyles({
   }
 })
 
-const MainSelectComponent = ({ config }) => {
+const ReactHookFormSelect = ({ config, name, message }) => {
+  const { formState: { errors }, control, watch, resetField } = useFormContext()
   const classes = useStyles()
-  const [selected, setSelected] = useState('')
   const [arrayOfSelected, setArrayOfSelected] = useState([])
+  const selected = watch(name)
 
-  const handleChange = (event) => {
-    setSelected(event.target.value)
+  useEffect(() => {
+    if (!selected) {
+      return
+    }
+    resetField(name)
+    if (arrayOfSelected.includes(selected)) {
+      return
+    }
     setArrayOfSelected([
       ...arrayOfSelected,
-      event.target.value
+      selected
     ])
-  }
+  }, [selected])
 
   const handleDelete = (value) => {
     const arrayWithDeletedItem = arrayOfSelected.filter(item => item !== value)
-    if (arrayWithDeletedItem.length === 0) {
-      setArrayOfSelected(arrayWithDeletedItem)
-      setSelected('')
-    } else {
-      setArrayOfSelected(arrayWithDeletedItem)
-    }
+    setArrayOfSelected(arrayWithDeletedItem)
   }
 
   return (
@@ -47,8 +50,16 @@ const MainSelectComponent = ({ config }) => {
         <Box sx={{ width: 250 }}>
           <FormControl fullWidth>
             <InputLabelComponent text={'Name'}/>
-            <SelectComponent style={classes.root} value={selected} label={'Name'} onChange={handleChange} config={config} />
+            <Controller
+              control={control}
+              name={name}
+              rules={message}
+              render={({ field }) => (
+                <SelectComponent style={classes.root} label={'Name'} config={config} {...field}/>
+              )}
+            />
           </FormControl>
+          {errors[name] && <p className="errorText" style={{ color: colors.error }}>{errors[name].message}</p>}
         </Box>
       </div>
       <div>
@@ -68,8 +79,10 @@ const MainSelectComponent = ({ config }) => {
   )
 }
 
-MainSelectComponent.propTypes = {
-  config: PropTypes.array
+ReactHookFormSelect.propTypes = {
+  config: PropTypes.array,
+  name: PropTypes.string,
+  message: PropTypes.object
 }
 
-export default MainSelectComponent
+export default ReactHookFormSelect

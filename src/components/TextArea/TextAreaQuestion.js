@@ -1,10 +1,10 @@
 import React from 'react'
 
-import MainTextAreaComponent from 'components/TextArea/MainTextAreaComponent'
+import ReactHookFormTextArea from 'components/TextArea/ReactHookForm/ReactHookFormTextArea'
 
 const TextAreaQuestion = () => {
   return (
-    <MainTextAreaComponent name='textArea' message={{ required: 'Ovo polje je obavezno' }}/>
+    <ReactHookFormTextArea name='textArea' message={{ required: 'Ovo polje je obavezno' }}/>
   )
 }
 

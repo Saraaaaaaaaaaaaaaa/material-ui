@@ -5,9 +5,9 @@ import colors from 'utils/global'
 
 import SliderComponent from 'components/ui/Slider/SliderComponent'
 
-import './MainSliderComponent.css'
+import './ReactHookFormSlider.css'
 
-const MainSliderComponent = ({ config, name, message }) => {
+const ReactHookFormSlider = ({ config, name, message }) => {
   const { formState: { errors }, control } = useFormContext()
 
   const [sliderValue, setSliderValue] = useState(0)
@@ -31,10 +31,10 @@ const MainSliderComponent = ({ config, name, message }) => {
   )
 }
 
-MainSliderComponent.propTypes = {
-  config: PropTypes.array,
+ReactHookFormSlider.propTypes = {
+  config: PropTypes.object,
   name: PropTypes.string,
   message: PropTypes.object
 }
 
-export default MainSliderComponent
+export default ReactHookFormSlider

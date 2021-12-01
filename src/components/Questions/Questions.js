@@ -1,17 +1,20 @@
 import React from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
-// import colors from 'utils/global'
+import colors from 'utils/global'
 
-import MainChipComponent from 'components/Chip/MainChipComponent'
-import SliderQuestion from 'components/Slider/SliderQuestion'
-import MainSelectComponent from 'components/Select/MainSelectComponent'
+import ChipQuestion from 'components/Chip/ChipQuestion'
+import SliderQuestion from 'components/Slider/SingleSlider/SliderQuestion'
+import SelectQuestion from 'components/Select/SelectQuestion'
 import RadioButtonQuestion from 'components/RadioButton/RadioButtonQuestion'
 import TextAreaQuestion from 'components/TextArea/TextAreaQuestion'
-import MultipleSliderQuestion from 'components/Slider/MultipleSliderQuestion'
-// import MainTextFieldComponent from 'components/TextField/MainTextFieldComponent'
-// import ButtonComponent from 'components/ui/Button/ButtonComponent'
+import MultipleSliderQuestion from 'components/Slider/MultipleSlider/MultipleSliderQuestion'
+import TextFieldQuestion from 'components/TextField/TextFieldQuestion'
+import ButtonComponent from 'components/ui/Button/ButtonComponent'
 
 import './Questions.css'
+
+const characters = /^[A-Za-z]+$/i
+const email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const questions = [
   {
@@ -19,7 +22,7 @@ const questions = [
     questionNumber: '1.',
     question: 'Which areas do you think you have the strongest/best skills?',
     subtitle: 'Select maximum 3 and minimum 1 option. If nothing applies, select \'Other\'.',
-    component: MainChipComponent,
+    component: ChipQuestion,
     config: [
       { key: 0, label: 'Quickly executing tasks', selected: false },
       { key: 1, label: 'Meticulous approach to implementation', selected: false },
@@ -62,7 +65,7 @@ const questions = [
     questionNumber: '3.',
     question: 'Which colleagues do you most often go to for advice on a technical problem?',
     subtitle: 'Choose a minimum of 1 and up to 3 names from the list',
-    component: MainSelectComponent,
+    component: SelectQuestion,
     config: [
       { key: 1, name: 'Stojan Sljivic' },
       { key: 2, name: 'Milan Boricic' },
@@ -178,7 +181,24 @@ const questions = [
     questionNumber: '7.',
     question: 'Leave your contact info ',
     subtitle: 'all fields are required',
-    component: MainSelectComponent // MainTextFieldComponent
+    component: TextFieldQuestion,
+    config: [
+      {
+        label: 'First Name',
+        name: 'firstName',
+        message: { maxLength: { value: 15, message: 'Maksimalan broj karaktera je 15' }, required: 'Ovo polje je obavezno', pattern: { value: characters, message: 'Dozvoljeno je uneti samo slova' } }
+      },
+      {
+        label: 'Last Name',
+        name: 'lastName',
+        message: { maxLength: { value: 20, message: 'Maksimalan broj karaktera je 20' }, required: 'Ovo polje je obavezno', pattern: { value: characters, message: 'Dozvoljeno je uneti samo slova' } }
+      },
+      {
+        label: 'Email',
+        name: 'email',
+        message: { required: 'Ovo polje je obavezno', pattern: { value: email, message: 'Neispravna email adresa' } }
+      }
+    ]
   }
 ]
 
@@ -210,8 +230,7 @@ const Questions = () => {
             })
           }
           <div className="buttonContainer">
-            <button type="submit">Submit</button>
-            {/* <ButtonComponent type="submit" text={'Potvrdi'} variant={'contained'} style={{ background: colors.pink, color: colors.white }}/> */}
+            <ButtonComponent type="submit" text={'Potvrdi'} variant={'contained'} style={{ background: colors.pink, color: colors.white }}/>
           </div>
         </div>
       </form>

@@ -5,9 +5,9 @@ import colors from 'utils/global'
 
 import TextAreaComponent from 'components/ui/TextArea/TextAreaComponent'
 
-import './MainTextAreaComponent.css'
+import './ReactHookFormTextArea.css'
 
-const MainTextAreaComponent = ({ name, message }) => {
+const ReactHookFormTextArea = ({ name, message }) => {
   const { formState: { errors }, control } = useFormContext()
 
   return (
@@ -29,9 +29,9 @@ const MainTextAreaComponent = ({ name, message }) => {
   )
 }
 
-MainTextAreaComponent.propTypes = {
+ReactHookFormTextArea.propTypes = {
   name: PropTypes.string,
   message: PropTypes.object
 }
 
-export default MainTextAreaComponent
+export default ReactHookFormTextArea

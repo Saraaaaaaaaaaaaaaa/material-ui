@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import MainSliderComponent from 'components/Slider/MainSliderComponent'
+import ReactHookFormSlider from 'components/Slider/SingleSlider/ReactHookForm/ReactHookFormSlider'
 
 const SliderQuestion = ({ config }) => {
   return (
-    <MainSliderComponent config={config} name='singleSlider' message={{ required: 'Ovo polje je obavezno' }} />
+    <ReactHookFormSlider config={config} name='singleSlider' message={{ required: 'Ovo polje je obavezno' }} />
   )
 }
 

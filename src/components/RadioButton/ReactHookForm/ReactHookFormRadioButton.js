@@ -5,9 +5,9 @@ import { useFormContext, Controller } from 'react-hook-form'
 
 import FormControlLabels from 'components/FormControlLabel/FormControlLabels'
 
-import './RadioButtonComponent.css'
+import './ReactHookFormRadioButton.css'
 
-const RadioButtonComponent = ({ config, name, message }) => {
+const ReactHookFormRadioButton = ({ config, name, message }) => {
   const { control } = useFormContext()
 
   return (
@@ -30,10 +30,10 @@ const RadioButtonComponent = ({ config, name, message }) => {
   )
 }
 
-RadioButtonComponent.propTypes = {
+ReactHookFormRadioButton.propTypes = {
   config: PropTypes.array,
   name: PropTypes.string,
   message: PropTypes.object
 }
 
-export default RadioButtonComponent
+export default ReactHookFormRadioButton

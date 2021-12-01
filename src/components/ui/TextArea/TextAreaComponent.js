@@ -3,7 +3,6 @@ import TextareaAutosize from '@mui/material/TextareaAutosize'
 import PropTypes from 'prop-types'
 
 const TextAreaComponent = ({ minRows, style, ...props }) => {
-  console.log(props, 'props')
   return (
     <TextareaAutosize
       minRows={minRows}

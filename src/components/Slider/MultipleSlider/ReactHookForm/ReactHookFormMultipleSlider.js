@@ -7,9 +7,9 @@ import colors from 'utils/global'
 import SliderComponent from 'components/ui/Slider/SliderComponent'
 import TypographyComponent from 'components/ui/Typography/TypographyComponent'
 
-import './MultipleSlider.css'
+import './ReactHookFormMultipleSlider.css'
 
-const MultipleSlider = ({ config, message }) => {
+const ReactHookFormMultipleSlider = ({ config, message }) => {
   const { formState: { errors }, control } = useFormContext()
 
   const [sliderValue, setSliderValue] = useState(0)
@@ -42,9 +42,9 @@ const MultipleSlider = ({ config, message }) => {
   )
 }
 
-MultipleSlider.propTypes = {
+ReactHookFormMultipleSlider.propTypes = {
   config: PropTypes.array,
   message: PropTypes.object
 }
 
-export default MultipleSlider
+export default ReactHookFormMultipleSlider

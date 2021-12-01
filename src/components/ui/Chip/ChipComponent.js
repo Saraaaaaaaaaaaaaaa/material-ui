@@ -2,7 +2,7 @@ import React from 'react'
 import Chip from '@mui/material/Chip'
 import PropTypes from 'prop-types'
 
-const ChipComponent = ({ label, variant, onClick, style, onDelete }) => {
+const ChipComponent = ({ label, variant, onClick, style, onDelete, ...props }) => {
   return (
     <Chip
       label={label}
@@ -10,6 +10,7 @@ const ChipComponent = ({ label, variant, onClick, style, onDelete }) => {
       onClick={onClick}
       onDelete={onDelete}
       style={style}
+      {...props}
     />
   )
 }
