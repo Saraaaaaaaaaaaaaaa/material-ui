@@ -45,7 +45,6 @@ const ReactHookFormSelect = ({ config, name, message }) => {
       resetField(name)
     }
   }
-
   return (
     <div>
       <div className="formControlContainer">
@@ -57,7 +56,9 @@ const ReactHookFormSelect = ({ config, name, message }) => {
               name={name}
               rules={message}
               render={({ field }) => (
-                <SelectComponent style={classes.root} label={'Name'} config={config} {...field}/>
+                <SelectComponent style={classes.root} label={'Name'} config={
+                  config.filter(c => !arrayOfSelected.includes(c.name))
+                } {...field}/>
               )}
             />
           </FormControl>
