@@ -2,9 +2,9 @@ import React from 'react'
 import Button from '@mui/material/Button'
 import PropTypes from 'prop-types'
 
-const ButtonComponent = ({ text, variant, style }) => {
+const ButtonComponent = ({ text, type, variant, style }) => {
   return (
-    <Button variant={variant} style={style}>
+    <Button variant={variant} type={type} style={style}>
       {text}
     </Button>
   )
@@ -12,6 +12,7 @@ const ButtonComponent = ({ text, variant, style }) => {
 
 ButtonComponent.propTypes = {
   text: PropTypes.string,
+  type: PropTypes.string,
   variant: PropTypes.string,
   style: PropTypes.object
 }

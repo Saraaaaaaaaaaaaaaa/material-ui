@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 
-const SelectComponent = ({ value, label, onChange, config, style }) => {
+const SelectComponent = ({ label, config, style, value, ...props }) => {
   return (
     <Select
       className={style}
-      value={value}
       label={label}
-      onChange={onChange}
+      value={value ?? ''}
+      {...props}
     >
       {
         config?.map(c => <MenuItem key={c.key} value={c.name}>{c.name}</MenuItem>)
@@ -19,10 +19,9 @@ const SelectComponent = ({ value, label, onChange, config, style }) => {
 }
 
 SelectComponent.propTypes = {
-  value: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func,
   config: PropTypes.array,
+  value: PropTypes.string,
   style: PropTypes.object
 }
 

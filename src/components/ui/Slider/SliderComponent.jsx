@@ -1,36 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import PropTypes from 'prop-types'
-import colors from 'utils/global'
 
-const SliderComponent = ({ config }) => {
-  const [sliderValue, setSliderValue] = useState(0)
-
-  const changeValue = (event, value) => {
-    setSliderValue(value)
-  }
-
+const SliderComponent = ({ config, value, onChange, style }) => {
   return (
     <Box sx={{ width: '70%' }}>
       <Slider
         aria-label="Slider"
         defaultValue={config.defaultValue}
-        value={sliderValue}
-        onChange={changeValue}
+        value={value ?? ' '}
+        onChange={onChange}
         step={config.step}
         marks={config.marks}
         min={config.min}
         max={config.max}
         valueLabelDisplay="auto"
-        style={{ color: colors.pink, height: 3, marginLeft: 40 }}
+        style={style}
       />
     </Box>
   )
 }
 
 SliderComponent.propTypes = {
-  config: PropTypes.object
+  config: PropTypes.object,
+  value: PropTypes.number,
+  onChange: PropTypes.func,
+  style: PropTypes.object
 }
 
 export default SliderComponent

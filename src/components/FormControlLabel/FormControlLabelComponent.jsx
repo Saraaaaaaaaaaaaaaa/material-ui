@@ -3,13 +3,13 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 import PropTypes from 'prop-types'
 
-const FormControlLabelComponent = ({ label, color }) => {
+const FormControlLabelComponent = ({ label, color, ...props }) => {
   return (
     <FormControlLabel value={label.space} control={<Radio sx={{
       '&.Mui-checked': {
         color: color
       }
-    }} />} label={label.space} />
+    }} {...props} />} label={label.space} />
   )
 }
 
