@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 const ReactHookFormTextField = ({ config }) => {
   const classes = useStyles()
   const { formState: { errors }, control } = useFormContext()
-  console.log(config, 'CCC')
+
   return (
     <div className="textFieldContainer">
       {
